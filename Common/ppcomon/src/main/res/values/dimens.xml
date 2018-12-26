@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="big_font_size">18dp</dimen>
+    <dimen name="normal_font_size">16dp</dimen>
+    <dimen name="small_font_size">14dp</dimen>
+    <dimen name="super_small_font_size">12dp</dimen>
+    <dimen name="more_small_font_size">10dp</dimen>
+
+    <dimen name="main_btn_height">45dp</dimen>
+
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="line_weight">1px</dimen>
+    <dimen name="margin_big">20dp</dimen>
+
+    <dimen name="bg_radius_small">2dp</dimen>
+    <dimen name="bg_radius_normal">4dp</dimen>
+    <dimen name="bg_radius_big">6dp</dimen>
+
+    <dimen name="action_bar_height">45dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+
+    <dimen name="tab_bar_height">56dp</dimen>
+
+    <!--4.4 以下无法设置状态栏颜色-->
+    <dimen name="statusbar_view_height">0dp</dimen>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_pic">
+        <item>拍照</item>
+        <item>相册</item>
+    </string-array>
+
+    <string-array name="all_order_status">
+        <item>全部</item>
+        <item>待付款</item>
+        <item>待发货</item>
+        <item>待收货</item>
+        <!--<item>待评价</item>-->
+        <item>已完成</item>
+    </string-array>
+
+    <string-array name="all_team_order_status">
+        <item>全部</item>
+        <item>已结算</item>
+        <item>待结算</item>
+    </string-array>
+</resources>

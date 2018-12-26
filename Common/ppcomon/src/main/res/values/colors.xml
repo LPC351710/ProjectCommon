@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_gray">#ff999999</color>
+    <color name="light_white">#fff7f7f7</color>
+    <color name="light_black">#ff333333</color>
+    <color name="middle_gray">#ff666666</color>
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="black_5p">#66000000</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="half_transparent_white">#80ffffff</color>
+    <color name="light_transparent_black">#11000000</color>
+    <color name="lower_transparent_white">#20ffffff</color>
+    <color name="half_transparent_black">#80000000</color>
+
+    <color name="windows_background">#60000000</color>
+
+    <color name="order_item_bg">#f2f2f2</color>
+
+    <color name="red_bg_start">#FF4111</color>
+    <color name="red_bg_end">#FF652F</color>
+
+    <color name="white_btn_normal">#FBFAFC</color>
+    <color name="white_btn_pressed">#EBEBEB</color>
+    <color name="white_btn_disable">#F7F7FA</color>
+
+    <color name="white_btn_normal_font">@color/light_black</color>
+    <color name="white_btn_pressed_font">@color/light_black</color>
+    <color name="white_btn_disable_font">#E3E3E3</color>
+
+    <color name="red_btn_normal_font">@color/white</color>
+    <color name="red_btn_pressed_font">#FF977F</color>
+    <color name="red_btn_disable_font">#FBB9A7</color>
+
+    <color name="red_btn_disable">#F99C7D</color>
+
+    <color name="small_btn_bg">#FF6600</color>
+    <color name="tips_bg_color">#FFEDBD</color>
+
+    <color name="bg_color">#F5F5F5</color>
+    <color name="divider">#eaeaea</color>
+    <color name="hint_font_color">#B0B0B0</color>
+    <color name="gray_font_color">#8E8E8E</color>
+    <color name="seller_remark_bg">#9AA1B0</color>
+    <color name="high_gray_color">#adadad</color>
+    <color name="more_high_gray_color">#dcdcdc</color>
+
+    <color name="red">#FF3608</color>
+    <color name="green">#5FD072</color>
+    <color name="blue">#3992ff</color>
+    <color name="orange">#FF9900</color>
+    <color name="main_color">#FF3608</color>
+    <color name="yellow">#ffb919</color>
+
+    <color name="red_pressed">#80FF3608</color>
+    <color name="blue_pressed">#803992ff</color>
+
+    <color name="btn_red_normal">@color/red</color>
+    <color name="btn_red_pressed">@color/red_pressed</color>
+    <color name="btn_red_disable">#d6d9db</color>
+
+    <color name="btn_orange">#ffae4c</color>
+    <color name="btn_red_p">#ff4c11</color>
+
+</resources>

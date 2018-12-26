@@ -1,0 +1,40 @@
+<resources>
+    <string name="ime_login">登录</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="permission_tips">为了您的账户安全以及更好地体验，需要获取手机状态和保存读取应用信息，请在接下来的操作中授予权限</string>
+    <string name="request_permission">权限申请</string>
+    <string name="set_permission_action">去设置</string>
+    <string name="set_permission_tips">请在设置->应用权限中开启权限，以正常使用</string>
+    <string name="permission_camera_tips">核销、上传头像等功能需要摄像头权限，请在接下来的操作中授予权限</string>
+    <string name="request_permission_contact">需要读取联系人权限，请在接下来的操作中授予权限</string>
+    <string name="request_permission_tips">需要权限，请在接下来的操作中授予权限</string>
+    <string name="camera_open_fail">请确保您的设备有相机功能并且已经打开相机权限</string>
+    <string name="camera_open_fail_tips">打开相机出错</string>
+    <string name="yongjin_desc">推客的商品销售统一由厂家直接收款、直接发货，并提供产品的售后服务，分销佣金由厂家统一设置</string>
+
+    <!--个人中心-->
+
+    <string name="vip_card_rule">1.请在结账前初始此卡;\n
+        2.此卡可享受会员优惠待遇;\n
+        3.此卡不得购买产品，不得与其他优惠同时使用;\n
+        4.此卡一经售出，概不兑现。如有遗失，请及时挂失;\n
+        5.本店保留此卡法律范围内的最终解释权</string>
+
+
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unsupported">不支持错误</string>
+    <string name="errcode_unknown">发送返回</string>
+
+    <string name="unit_money">¥</string>
+    <string name="tweet_prompt">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;在申请成为推客后，转发该列表下的文章给好友或朋友圈，当推文中的商品被购买后，推客都可以获得商品的佣金哦。\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;如果商家开启“推文送积分”在浏览文档或者点击文档的商品时均能获得积分，积分可以依据抵扣价格。</string>
+    <string name="default_hint_error">暂无数据</string>
+    <string name="no_wx">未安装微信</string>
+
+    <string name="sugar_label">商城获得蜜糖有两个途径：\n·下单购买成功即可获得蜜糖。 \n·获得分佣，分红的同时也会获得蜜糖奖励。</string>
+    <string name="sugar_label1">登录"蜂钱包App"可获得蜜糖自然生长</string>
+</resources>

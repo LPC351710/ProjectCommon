@@ -1,0 +1,79 @@
+package com.ppm.ppcomon.base.view.fragment;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.util.DisplayMetrics;
+import android.view.*;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+import com.ppm.ppcomon.base.presenter.BasePresenter;
+import com.ppm.ppcomon.base.view.intf.IBaseView;
+
+public abstract class BaseDialogFragment<V extends IBaseView, T extends BasePresenter<V>> extends
+        BaseFragment implements IBaseView {
+
+    private Unbinder unbinder;
+
+    public interface OnConfirmListener {
+        void onConfirm(Object params);
+    }
+
+    protected OnConfirmListener listener;
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        final Dialog dialog = new Dialog(getActivity());
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        LayoutInflater in = LayoutInflater.from(getActivity());
+        View pwdView = in.inflate(getLayoutId(), null);
+        dialog.setContentView(pwdView);
+        unbinder = ButterKnife.bind(this, pwdView);
+        initView();
+        return dialog;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnConfirmListener) {
+            listener = (OnConfirmListener) context;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        DisplayMetrics dm = new DisplayMetrics();
+        if (getActivity() != null) {
+            getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        }
+
+        if (getDialog().getWindow() != null) {
+            getDialog().getWindow().setLayout((int) (dm.widthPixels * 0.85f), ViewGroup.LayoutParams
+                    .WRAP_CONTENT);
+        }
+    }
+
+    public void show(FragmentManager fragmentManager) {
+        show(fragmentManager, "");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
+    }
+}
