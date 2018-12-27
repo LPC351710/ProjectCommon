@@ -1,1 +1,1 @@
-include ':app', ':ppcomon'
+include ':app', ':ppcomon', ':netapp'
