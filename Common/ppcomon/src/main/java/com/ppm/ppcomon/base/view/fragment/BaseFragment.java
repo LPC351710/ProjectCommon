@@ -18,6 +18,7 @@ import com.ppm.ppcomon.widget.DefaultProgressDialog;
 import com.ppm.ppcomon.widget.ErrorHintView;
 import com.ppm.ppcomon.widget.actionbar.BaseActionBar;
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public abstract class BaseFragment<V extends IBaseView, T extends BasePresenter<V>> extends DialogFragment implements IBaseView {
 
@@ -135,6 +136,11 @@ public abstract class BaseFragment<V extends IBaseView, T extends BasePresenter<
     @Override
     public Handler getHandler() {
         return mHandler;
+    }
+
+    @Subscribe
+    public void onEvent() {
+
     }
 
 }

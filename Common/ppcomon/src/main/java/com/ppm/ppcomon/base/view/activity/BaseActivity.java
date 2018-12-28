@@ -15,6 +15,7 @@ import com.ppm.ppcomon.widget.ErrorHintView;
 import com.ppm.ppcomon.widget.actionbar.BaseActionBar;
 import com.ppm.ppcomon.widget.swipelayout.app.SwipeBackActivity;
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * @author lpc 16/6/30.
@@ -41,7 +42,6 @@ public abstract class BaseActivity<V extends IBaseView, T extends BasePresenter<
             setContentView(getLayoutId());
         }
         getSwipeBackLayout().setEnableGesture(true);
-        EventBus.getDefault().register(this);
         unbinder = ButterKnife.bind(this);
 
         if (mPresenter != null) {
@@ -57,6 +57,18 @@ public abstract class BaseActivity<V extends IBaseView, T extends BasePresenter<
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 
     protected int getLayoutId() {
@@ -149,5 +161,9 @@ public abstract class BaseActivity<V extends IBaseView, T extends BasePresenter<
     @Override
     public Handler getHandler() {
         return this.mHandler;
+    }
+
+    @Subscribe
+    public void onEvent() {
     }
 }

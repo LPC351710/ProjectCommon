@@ -1,15 +1,31 @@
 package com.ppm.netapp.view;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import com.ppm.netapp.R;
+import com.ppm.netapp.presenter.HisEventPresenter;
+import com.ppm.ppcomon.base.view.activity.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
+        implements IHisEventView {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected HisEventPresenter createPresenter() {
+        return new HisEventPresenter();
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+        mPresenter.getHisEventList();
+    }
+
+    @Override
+    public void onGetHistoryEvent(String eventStr) {
+
     }
 
 }

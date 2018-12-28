@@ -16,9 +16,9 @@ public class HisEvent extends Data {
     private String _id;
     private String title;
     private String pic;
-    private int year;
-    private int month;
-    private int day;
+    private String year;
+    private String month;
+    private String day;
     private String des;
     private String lunar;
 
@@ -46,27 +46,27 @@ public class HisEvent extends Data {
         this.pic = pic;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public int getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
-    public int getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(int day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
@@ -84,5 +84,19 @@ public class HisEvent extends Data {
 
     public void setLunar(String lunar) {
         this.lunar = lunar;
+    }
+
+    @Override
+    public String toString() {
+        return "HisEvent{" +
+                "_id='" + _id + '\'' +
+                ", title='" + title + '\'' +
+                ", pic='" + pic + '\'' +
+                ", year='" + year + '\'' +
+                ", month='" + month + '\'' +
+                ", day='" + day + '\'' +
+                ", des='" + des + '\'' +
+                ", lunar='" + lunar + '\'' +
+                '}';
     }
 }

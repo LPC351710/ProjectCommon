@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 28
@@ -23,6 +24,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -35,5 +41,8 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.alibaba:fastjson:1.1.70.android'
+    implementation 'com.jakewharton:butterknife:9.0.0-rc3'
     implementation project(':ppcomon')
+
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc3'
 }
