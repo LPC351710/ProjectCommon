@@ -18,7 +18,7 @@ public class HisEventPresenter extends BasePresenter<IHisEventView> {
         params.put("v","1.0");
         params.put("month","12");
         params.put("day","day");
-        httpUtils.sendGetRequest("http://api.juheapi.com/japi/toh", params, new JsonCallBack<HisEvent>() {
+        httpUtils.sendGetRequest("https://api.juheapi.com/japi/toh", params, new JsonCallBack<HisEvent>() {
             @Override
             public void success(HisEvent event) {
                 if (event != null) {

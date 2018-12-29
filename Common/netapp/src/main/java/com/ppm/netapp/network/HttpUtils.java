@@ -1,6 +1,8 @@
 package com.ppm.netapp.network;
 
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import com.ppm.netapp.network.callback.ReqCallback;
 import com.ppm.ppcomon.utils.LogUtils;
 import okhttp3.OkHttpClient;
@@ -8,39 +10,101 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-import java.io.IOException;
+import javax.net.ssl.*;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class HttpUtils {
 
+    private Handler mainThreadHandler;
 
-    public void sendGetRequest(String url, Map<String, String> params, ReqCallback reqCallback) {
-        try {
-            OkHttpClient okHttpClient = new OkHttpClient();
-            url = appendParams(url, params);
-            Request request = new Request.Builder().url(url).build();
-            Response response = okHttpClient.newCall(request).execute();
+    public HttpUtils() {
+        mainThreadHandler = new Handler(Looper.getMainLooper());
+    }
 
-            if (response.isSuccessful()) {
-                ResponseBody responseBody = response.body();
-                if (responseBody != null) {
-                    LogUtils.d("response: " + responseBody.string());
 
-                    if (reqCallback != null) {
-                        reqCallback.success(responseBody.string());
+    public void sendGetRequest(final String url, Map<String, String> params, ReqCallback reqCallback) {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(() -> {
+            try {
+                OkHttpClient.Builder builder = new OkHttpClient.Builder();
+                OkHttpClient okHttpClient = new OkHttpClient();
+
+                SSLContext sc = SSLContext.getInstance("SSL");
+                X509TrustManager x509TrustManager = new X509TrustManager() {
+                    @Override
+                    public void checkClientTrusted(X509Certificate[] chain, String authType) {
+
                     }
+
+                    @Override
+                    public void checkServerTrusted(X509Certificate[] chain, String authType) {
+
+                    }
+
+                    @Override
+                    public X509Certificate[] getAcceptedIssuers() {
+                        return null;
+                    }
+                };
+                try {
+                    sc.init(null, new TrustManager[]{x509TrustManager}, new SecureRandom());
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } else {
+
+                builder.sslSocketFactory(sc.getSocketFactory(), x509TrustManager);
+                builder.hostnameVerifier(new HostnameVerifier() {
+                    @Override
+                    public boolean verify(String hostname, SSLSession session) {
+                        return true;
+                    }
+                });
+                String appendUrl = appendParams(url, params);
+                Request request = new Request.Builder().url(appendUrl).build();
+                Response response = okHttpClient.newCall(request).execute();
+
+                if (response.isSuccessful()) {
+                    ResponseBody responseBody = response.body();
+                    if (responseBody != null) {
+                        LogUtils.d("response: " + responseBody.string());
+                        callBackSuccess(reqCallback, responseBody.string());
+                    }
+                } else {
+                    callBackFail(reqCallback);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                callBackFail(reqCallback);
+            }
+        });
+    }
+
+    private void callBackSuccess(ReqCallback reqCallback, String response) {
+        if (mainThreadHandler != null) {
+            mainThreadHandler.post(() -> {
+                if (reqCallback != null) {
+                    reqCallback.success(response);
+                }
+            });
+        }
+    }
+
+    private void callBackFail(ReqCallback reqCallback) {
+        if (mainThreadHandler != null) {
+            mainThreadHandler.post(() -> {
                 if (reqCallback != null) {
                     reqCallback.fail();
                 }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            });
         }
     }
+
 
     private String appendParams(String url, Map<String, String> params) {
         if (url == null || params == null || params.isEmpty()) {
