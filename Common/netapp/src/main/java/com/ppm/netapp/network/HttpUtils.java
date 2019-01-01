@@ -5,12 +5,10 @@ import android.os.Handler;
 import android.os.Looper;
 import com.ppm.netapp.network.callback.ReqCallback;
 import com.ppm.ppcomon.utils.LogUtils;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
+import okhttp3.*;
 
 import javax.net.ssl.*;
+import java.io.IOException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Iterator;
@@ -67,17 +65,28 @@ public class HttpUtils {
                 });
                 String appendUrl = appendParams(url, params);
                 Request request = new Request.Builder().url(appendUrl).build();
-                Response response = okHttpClient.newCall(request).execute();
-
-                if (response.isSuccessful()) {
-                    ResponseBody responseBody = response.body();
-                    if (responseBody != null) {
-                        LogUtils.d("response: " + responseBody.string());
-                        callBackSuccess(reqCallback, responseBody.string());
+                okHttpClient.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        LogUtils.d("Err: " + e.getLocalizedMessage());
+                        callBackFail(reqCallback);
                     }
-                } else {
-                    callBackFail(reqCallback);
-                }
+
+                    @Override
+                    public void onResponse(Call call, Response response) {
+                        ResponseBody responseBody = response.body();
+                        String responseStr;
+                        if (responseBody != null) {
+                            try {
+                                responseStr = responseBody.string();
+                                callBackSuccess(reqCallback, responseStr);
+                            } catch (Exception e) {
+                                callBackFail(reqCallback);
+                            }
+                        }
+                    }
+                });
+
             } catch (Exception e) {
                 e.printStackTrace();
                 callBackFail(reqCallback);
