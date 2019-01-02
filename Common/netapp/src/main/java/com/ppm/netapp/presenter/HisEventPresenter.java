@@ -40,7 +40,7 @@ public class HisEventPresenter extends BasePresenter<IHisEventView> {
         httpUtils.sendGetRequest(Constant.GET_EVENT_DETAILS, params, new JsonCallBack<HisDetails>() {
             @Override
             public void success(HisDetails data) {
-                
+
             }
 
             @Override

@@ -2,12 +2,15 @@ package com.ppm.netapp.view;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.ppm.netapp.R;
 import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.presenter.HisEventPresenter;
 import com.ppm.netapp.view.adapter.HisEventListAdapter;
 import com.ppm.ppcomon.base.view.activity.BaseActivity;
+import com.ppm.ppcomon.widget.adapter.BaseRVAdapter;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -15,7 +18,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
-        implements IHisEventView {
+        implements IHisEventView, BaseRVAdapter.OnItemClickListener {
 
     @BindView(R.id.list_his_event)
     RecyclerView listHisEvent;
@@ -40,6 +43,7 @@ public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
         hisEventListAdapter = new HisEventListAdapter(MainActivity.this);
         listHisEvent.setAdapter(hisEventListAdapter);
         listHisEvent.setLayoutManager(new LinearLayoutManager(this));
+        hisEventListAdapter.setOnItemClickListener(this);
     }
 
     @Override
@@ -51,5 +55,10 @@ public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent() {
+    }
+
+    @Override
+    public void onItemClick(AdapterView parent, View view, int position, Object o) {
+
     }
 }
