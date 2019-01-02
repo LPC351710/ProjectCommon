@@ -22,7 +22,7 @@ public class HisEventPresenter extends BasePresenter<IHisEventView> {
             @Override
             public void success(HisEvent event) {
                 if (event != null) {
-                    getView().onGetHistoryEvent(event.toString());
+                    getView().onGetHistoryEvent(event);
                 }
             }
 

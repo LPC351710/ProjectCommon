@@ -5,13 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * yanweiqiang
- * 2018/1/15.
- */
+public abstract class BaseRVAdapter<T, V extends RecyclerView.ViewHolder>
+        extends RecyclerView.Adapter<V> {
 
-public abstract class BaseRVAdapter<T, V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<V> {
     protected List<T> mList;
+
+    protected abstract void onBindViewHolder(T t, V viewHolder, int position);
 
     public BaseRVAdapter() {
         super();
@@ -36,5 +35,15 @@ public abstract class BaseRVAdapter<T, V extends RecyclerView.ViewHolder> extend
     @Override
     public int getItemCount() {
         return mList.size();
+    }
+
+    @Override
+    public void onBindViewHolder(V viewHolder, int position) {
+        T t = null;
+        if (mList != null && mList.size() > position) {
+            t = mList.get(position);
+        }
+
+        onBindViewHolder(t, viewHolder, position);
     }
 }

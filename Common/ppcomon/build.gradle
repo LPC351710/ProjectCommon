@@ -48,6 +48,8 @@ dependencies {
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-18'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
 
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc3'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }

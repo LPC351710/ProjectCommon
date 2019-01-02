@@ -20,7 +20,6 @@ public class HttpUtils {
         mainThreadHandler = new Handler(Looper.getMainLooper());
     }
 
-
     public void sendGetRequest(final String url, Map<String, String> params, ReqCallback reqCallback) {
         try {
             OkHttpClient okHttpClient = new OkHttpClient();
