@@ -1,5 +1,6 @@
 package com.ppm.netapp.presenter;
 
+import com.ppm.netapp.model.HisDetails;
 import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.network.HttpUtils;
 import com.ppm.netapp.network.callback.JsonCallBack;
@@ -23,6 +24,23 @@ public class HisEventPresenter extends BasePresenter<IHisEventView> {
                 if (event != null) {
                     getView().onGetHistoryEvent(event);
                 }
+            }
+
+            @Override
+            public void fail(int code, String err) {
+
+            }
+        });
+    }
+
+    public void getHisDetails(String eventId) {
+        HttpUtils httpUtils = new HttpUtils();
+        Map<String, String> params = getCommonParams();
+        params.put("id", eventId);
+        httpUtils.sendGetRequest(Constant.GET_EVENT_DETAILS, params, new JsonCallBack<HisDetails>() {
+            @Override
+            public void success(HisDetails data) {
+                
             }
 
             @Override
