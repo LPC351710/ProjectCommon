@@ -35,7 +35,6 @@ public abstract class JsonCallBack<T extends Data> implements ReqCallback {
             success(jsData);
         } catch (Exception e) {
             fail(ErrCode.CODE_DATA_ILLEGAL, "");
-            return;
         }
     }
 

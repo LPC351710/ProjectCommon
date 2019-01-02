@@ -9,7 +9,7 @@ import android.content.Context;
 public class App extends Application {
 
     public static final boolean IS_TEST = true;
-    public static final boolean IS_DEBUG = false;
+    public static final boolean IS_DEBUG = true;
 
     private static App mContext;
 

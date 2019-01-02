@@ -16,9 +16,9 @@ public class HisEventPresenter extends BasePresenter<IHisEventView> {
         Map<String, String> params = new HashMap<>();
         params.put("key","0dbb338d2f0bf8392d1ff773df23a555");
         params.put("v","1.0");
-        params.put("month","12");
-        params.put("day","day");
-        httpUtils.sendGetRequest("https://api.juheapi.com/japi/toh", params, new JsonCallBack<HisEvent>() {
+        params.put("month","1");
+        params.put("day","1");
+        httpUtils.sendGetRequest("http://api.juheapi.com/japi/toh", params, new JsonCallBack<HisEvent>() {
             @Override
             public void success(HisEvent event) {
                 if (event != null) {
