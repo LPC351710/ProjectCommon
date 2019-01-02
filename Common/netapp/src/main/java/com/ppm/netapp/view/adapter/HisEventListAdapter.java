@@ -37,7 +37,7 @@ public class HisEventListAdapter extends BaseRVAdapter<HisEvent.ResultBean, HisE
         if (event != null && viewHolder != null) {
             ImageLoader.loadImage(mActivity, event.getPic(), viewHolder.imgEvent);
             viewHolder.txtTitle.setText(event.getTitle());
-            String timeStr = event.getYear() + "-" + event.getMonth() + "-" + event.getDay() + "(" + event.getLunar() + ")";
+            String timeStr = event.getYear() + "-" + event.getMonth() + "-" + event.getDay() + " (" + event.getLunar() + ")";
             viewHolder.txtTime.setText(timeStr);
             viewHolder.txtDesc.setText(event.getDes());
         }

@@ -19,6 +19,7 @@ public final class ImageLoader {
 
         if (StringUtil.isEmpty(url)) {
             imageView.setImageResource(R.mipmap.ic_default_photo);
+            return;
         }
         Glide.with(activity).load(url).into(imageView);
     }
