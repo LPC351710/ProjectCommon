@@ -1,5 +1,6 @@
 package com.ppm.ppcomon.widget.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
@@ -50,40 +51,29 @@ public abstract class BaseRVAdapter<T, V extends RecyclerView.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(V viewHolder, int position) {
+    public void onBindViewHolder(@NonNull V viewHolder, int position) {
         T t = null;
         if (mList != null && mList.size() > position) {
             t = mList.get(position);
         }
 
+        viewHolder.itemView.setOnClickListener(v -> {
+            onItemHolderClick(viewHolder);
+        });
+
         onBindViewHolder(t, viewHolder, position);
     }
 
-    abstract class BaseViewHolder extends RecyclerView.ViewHolder {
-
-        public BaseViewHolder(View itemView) {
-            super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onItemHolderClick();
-                }
-            });
+    private void onItemHolderClick(V viewHolder) {
+        int position = viewHolder.getAdapterPosition();
+        T data = null;
+        if (mList != null && mList.size() > position) {
+            data = mList.get(viewHolder.getAdapterPosition());
         }
 
-        void onItemHolderClick() {
-            int position = getAdapterPosition();
-            T data = null;
-            if (mList != null && mList.size() > position) {
-                data =  mList.get(getAdapterPosition());
-            }
-
-            if (onItemClickListener != null) {
-                onItemClickListener.onItemClick(null, itemView,
-                        getAdapterPosition(), data);
-            } else {
-                throw new IllegalStateException("Please call setOnItemClickListener method set the click event listeners");
-            }
+        if (onItemClickListener != null) {
+            onItemClickListener.onItemClick(null, viewHolder.itemView,
+                    viewHolder.getAdapterPosition(), data);
         }
     }
 }

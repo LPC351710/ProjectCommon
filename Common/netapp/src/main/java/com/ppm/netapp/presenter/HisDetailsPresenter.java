@@ -1,29 +1,25 @@
 package com.ppm.netapp.presenter;
 
 import com.ppm.netapp.model.HisDetails;
-import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.network.HttpUtils;
 import com.ppm.netapp.network.callback.JsonCallBack;
 import com.ppm.netapp.network.constant.Constant;
-import com.ppm.netapp.view.IHisEventView;
+import com.ppm.netapp.view.IDetailsView;
 import com.ppm.ppcomon.base.presenter.BasePresenter;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class HisEventPresenter extends BasePresenter<IHisEventView> {
+public class HisDetailsPresenter extends BasePresenter<IDetailsView> {
 
-    public void getHisEventList() {
+    public void getHisDetails(String eventId) {
         HttpUtils httpUtils = new HttpUtils();
         Map<String, String> params = getCommonParams();
-        params.put("month", "1");
-        params.put("day", "1");
-        httpUtils.sendGetRequest(Constant.GET_EVENT_LIST, params, new JsonCallBack<HisEvent>() {
+        params.put("id", eventId);
+        httpUtils.sendGetRequest(Constant.GET_EVENT_DETAILS, params, new JsonCallBack<HisDetails>() {
             @Override
-            public void success(HisEvent event) {
-                if (event != null) {
-                    getView().onGetHistoryEvent(event);
-                }
+            public void success(HisDetails data) {
+
             }
 
             @Override

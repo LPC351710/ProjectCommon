@@ -1,21 +1,19 @@
 package com.ppm.netapp.view;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-
+import butterknife.BindView;
 import com.ppm.netapp.R;
 import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.presenter.HisEventPresenter;
 import com.ppm.netapp.view.adapter.HisEventListAdapter;
 import com.ppm.ppcomon.base.view.activity.BaseActivity;
 import com.ppm.ppcomon.widget.adapter.BaseRVAdapter;
-
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
         implements IHisEventView, BaseRVAdapter.OnItemClickListener {
@@ -58,7 +56,12 @@ public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
     }
 
     @Override
-    public void onItemClick(AdapterView parent, View view, int position, Object o) {
-
+    public void onItemClick(AdapterView parent, View view, int position, Object data) {
+        Intent intent = new Intent(MainActivity.this, EventDetailsActivity.class);
+        if (data instanceof HisEvent.ResultBean) {
+            HisEvent.ResultBean resultBean = (HisEvent.ResultBean) data;
+            intent.putExtra("event_id", resultBean.get_id());
+        }
+        startActivity(intent);
     }
 }
