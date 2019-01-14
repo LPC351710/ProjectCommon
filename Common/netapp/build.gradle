@@ -40,7 +40,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.alibaba:fastjson:1.1.70.android'
     implementation 'com.jakewharton:butterknife:9.0.0-rc3'
     implementation 'org.greenrobot:eventbus:3.1.1'

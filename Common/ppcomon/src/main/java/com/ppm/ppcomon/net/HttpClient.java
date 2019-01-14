@@ -2,20 +2,22 @@ package com.ppm.ppcomon.net;
 
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ppm.ppcomon.base.app.App;
 import com.ppm.ppcomon.net.callback.Callback;
+import com.ppm.ppcomon.net.okhttp.OkHttpUtils;
+import com.ppm.ppcomon.net.okhttp.callback.StringCallback;
 import com.ppm.ppcomon.utils.ExceptionUtil;
 import com.ppm.ppcomon.utils.LogUtils;
 import com.ppm.ppcomon.utils.NetworkManager;
 import com.ppm.ppcomon.widget.BaseToast;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
-import okhttp3.RequestBody;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.RequestBody;
 
 import static com.ppm.ppcomon.net.ErrorCode.ERR_CODE_SUCCESS;
 import static com.ppm.ppcomon.net.ErrorCode.MAP_ERROR_CODE;

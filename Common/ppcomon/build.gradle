@@ -39,7 +39,7 @@ dependencies {
 
     implementation 'com.alibaba:fastjson:1.1.70.android'
     implementation 'org.greenrobot:eventbus:3.1.1'
-    implementation 'com.zhy:okhttputils:2.6.2'
+//    implementation 'com.zhy:okhttputils:2.6.2'
     implementation 'com.jakewharton:butterknife:9.0.0-rc3'
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.facebook.fresco:fresco:1.11.0'
@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-18'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
 
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc3'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
