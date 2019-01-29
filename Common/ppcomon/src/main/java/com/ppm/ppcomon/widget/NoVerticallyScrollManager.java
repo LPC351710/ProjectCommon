@@ -1,7 +1,7 @@
 package com.ppm.ppcomon.widget;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.appcompat.widget.LinearLayoutManager;
 
 public class NoVerticallyScrollManager extends LinearLayoutManager {
 

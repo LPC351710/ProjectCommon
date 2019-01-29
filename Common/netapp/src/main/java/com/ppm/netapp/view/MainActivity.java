@@ -1,8 +1,8 @@
 package com.ppm.netapp.view;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.LinearLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import butterknife.BindView;

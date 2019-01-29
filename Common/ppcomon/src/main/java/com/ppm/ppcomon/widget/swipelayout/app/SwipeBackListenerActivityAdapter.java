@@ -1,7 +1,7 @@
 package com.ppm.ppcomon.widget.swipelayout.app;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.ppm.ppcomon.widget.swipelayout.SwipeBackLayout;
 import com.ppm.ppcomon.widget.swipelayout.Utils;
 

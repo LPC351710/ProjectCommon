@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white">
 
-        <com.dodoca.rrdcommon.widget.wheelview.LoopView
+        <com.ppm.ppcomon.widget.wheelview.LoopView
             android:id="@+id/j_optionspicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

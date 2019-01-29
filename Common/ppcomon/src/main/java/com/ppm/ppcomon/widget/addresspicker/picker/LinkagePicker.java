@@ -1,8 +1,8 @@
 package com.ppm.ppcomon.widget.addresspicker.picker;
 
 import android.app.Activity;
-import android.support.annotation.FloatRange;
-import android.support.annotation.NonNull;
+import androidx.annotation.FloatRange;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;

@@ -2,7 +2,6 @@ package com.ppm.ppcomon.widget.addresspicker.popup;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.annotation.*;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;

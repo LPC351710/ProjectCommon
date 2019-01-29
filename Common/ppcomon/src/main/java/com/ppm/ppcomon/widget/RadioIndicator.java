@@ -14,7 +14,7 @@ import com.ppm.ppcomon.R;
  * Date 2017/11/6.
  */
 
-public class RadioIndicator extends android.support.v7.widget.AppCompatRadioButton {
+public class RadioIndicator extends androidx.appcompat.widget.AppCompatRadioButton {
     private int stroke;
     private Paint paint;
 

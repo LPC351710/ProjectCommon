@@ -1,1 +1,1 @@
-include ':app', ':ppcomon', ':netapp'
+include ':ppcomon', ':netapp', ':rxjava'

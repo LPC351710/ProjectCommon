@@ -1,13 +1,13 @@
 package com.ppm.ppcomon.widget.infiniteviewpager;
 
-import android.support.v4.view.PagerAdapter;
+import androidx.core.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 /**
  * https://github.com/JakeWharton/salvage
- * A {@link android.support.v4.view.PagerAdapter} which behaves like an {@link android.widget.Adapter} with view types and
+ * A {@link androidx.core.view.PagerAdapter} which behaves like an {@link android.widget.Adapter} with view types and
  * view recycling.
  */
 public abstract class RecyclingPagerAdapter extends PagerAdapter {

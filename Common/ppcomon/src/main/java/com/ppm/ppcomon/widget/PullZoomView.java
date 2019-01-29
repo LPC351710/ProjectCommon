@@ -2,8 +2,8 @@ package com.ppm.ppcomon.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.NestedScrollView;
+import androidx.core.view.ViewCompat;
+import androidx.core.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.*;
 import android.widget.Scroller;

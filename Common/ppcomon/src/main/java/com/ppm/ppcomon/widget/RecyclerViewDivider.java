@@ -1,7 +1,7 @@
 package com.ppm.ppcomon.widget;
 
 import android.content.Context;
-import android.support.v7.widget.DividerItemDecoration;
+import androidx.appcompat.widget.DividerItemDecoration;
 import com.ppm.ppcomon.R;
 
 
