@@ -1,10 +1,12 @@
 package com.ppm.ppcomon.utils;
 
 import android.app.Activity;
-import androidx.core.app.Fragment;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
 import com.ppm.ppcomon.R;
+
+import androidx.fragment.app.Fragment;
 
 public final class ImageLoader {
 

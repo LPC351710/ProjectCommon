@@ -11,20 +11,31 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
-import androidx.core.view.PagerAdapter;
-import androidx.core.view.ViewPager;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
-import android.util.*;
-import android.view.*;
+import android.util.AttributeSet;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.SparseArray;
+import android.util.TypedValue;
+import android.view.GestureDetector;
+import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.ppm.ppcomon.R;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 //import byc.imagewatcher.view.imagewatcher.R;
 

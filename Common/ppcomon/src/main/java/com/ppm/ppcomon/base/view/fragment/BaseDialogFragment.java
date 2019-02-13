@@ -5,14 +5,20 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.app.FragmentManager;
 import android.util.DisplayMetrics;
-import android.view.*;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+
 import com.ppm.ppcomon.base.presenter.BasePresenter;
 import com.ppm.ppcomon.base.view.intf.IBaseView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseDialogFragment<V extends IBaseView, T extends BasePresenter<V>> extends
         BaseFragment implements IBaseView {

@@ -1,9 +1,10 @@
 package com.ppm.ppcomon.widget.infiniteviewpager;
 
-import androidx.core.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * https://github.com/JakeWharton/salvage

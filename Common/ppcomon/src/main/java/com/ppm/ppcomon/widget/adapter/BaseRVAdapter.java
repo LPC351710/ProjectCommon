@@ -1,12 +1,13 @@
 package com.ppm.ppcomon.widget.adapter;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseRVAdapter<T, V extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter<V> {

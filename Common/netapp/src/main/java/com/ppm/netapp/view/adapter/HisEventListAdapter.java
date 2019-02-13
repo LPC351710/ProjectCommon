@@ -1,8 +1,6 @@
 package com.ppm.netapp.view.adapter;
 
 import android.app.Activity;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,8 @@ import com.ppm.netapp.model.HisEvent;
 import com.ppm.ppcomon.utils.ImageLoader;
 import com.ppm.ppcomon.widget.adapter.BaseRVAdapter;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

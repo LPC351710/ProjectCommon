@@ -1,8 +1,9 @@
 package com.ppm.ppcomon.widget.ezrecyclerview;
 
 import android.graphics.Rect;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Author dodoca_android.

@@ -1,19 +1,22 @@
 package com.ppm.netapp.view;
 
 import android.content.Intent;
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import butterknife.BindView;
+
 import com.ppm.netapp.R;
 import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.presenter.HisEventPresenter;
 import com.ppm.netapp.view.adapter.HisEventListAdapter;
 import com.ppm.ppcomon.base.view.activity.BaseActivity;
 import com.ppm.ppcomon.widget.adapter.BaseRVAdapter;
+
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 
 public class MainActivity extends BaseActivity<IHisEventView, HisEventPresenter>
         implements IHisEventView, BaseRVAdapter.OnItemClickListener {

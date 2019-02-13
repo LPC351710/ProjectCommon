@@ -3,12 +3,14 @@ package com.ppm.ppcomon.widget.infiniteviewpager;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import androidx.core.view.PagerAdapter;
-import androidx.core.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+
 import com.ppm.ppcomon.widget.FixedViewPager;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 
 /**

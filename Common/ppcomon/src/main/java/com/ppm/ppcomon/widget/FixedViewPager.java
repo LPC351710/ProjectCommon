@@ -1,11 +1,12 @@
 package com.ppm.ppcomon.widget;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * @author lpc

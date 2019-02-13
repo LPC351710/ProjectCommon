@@ -2,23 +2,26 @@ package com.ppm.ppcomon.base.view.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.DialogFragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+
 import com.ppm.ppcomon.R;
 import com.ppm.ppcomon.base.presenter.BasePresenter;
 import com.ppm.ppcomon.base.view.intf.IBaseView;
 import com.ppm.ppcomon.widget.DefaultProgressDialog;
 import com.ppm.ppcomon.widget.ErrorHintView;
 import com.ppm.ppcomon.widget.actionbar.BaseActionBar;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseFragment<V extends IBaseView, T extends BasePresenter<V>> extends DialogFragment implements IBaseView {
 

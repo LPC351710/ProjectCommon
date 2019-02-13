@@ -1,8 +1,10 @@
 package com.ppm.ppcomon.widget;
 
 import android.content.Context;
-import androidx.appcompat.widget.DividerItemDecoration;
+
 import com.ppm.ppcomon.R;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
 
 
 /**

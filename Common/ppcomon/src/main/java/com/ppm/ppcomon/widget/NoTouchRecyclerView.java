@@ -1,10 +1,11 @@
 package com.ppm.ppcomon.widget;
 
 import android.content.Context;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class NoTouchRecyclerView extends RecyclerView {
 
