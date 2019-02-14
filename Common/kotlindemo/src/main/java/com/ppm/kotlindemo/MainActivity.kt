@@ -35,18 +35,21 @@ class MainActivity : AppCompatActivity() {
      */
     private fun requestHisList() {
         val httpClient = HttpClient()
-        val params = getCommonParams();
+        val params: MutableMap<String, String> = getCommonParams();
         params["month"] = "1"
         params["day"] = "1"
         val mCallback: Callback = object : Callback {
             override fun onStart() {
             }
 
-            override fun onSuccess(response: JSONObject) {
-                LogUtils.d(response.toJSONString())
+            override fun onSuccess(response: JSONObject?) {
+                if (response != null) {
+                    LogUtils.d(response.toJSONString())
+                }
             }
 
             override fun onFail(errorCode: Int, errorMessage: String?) {
+                LogUtils.d(errorMessage)
             }
 
             override fun onStop() {
@@ -61,9 +64,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getCommonParams(): MutableMap<String, String> {
-        val params = mutableMapOf<String, String>()
+        val params: MutableMap<String, String> = mutableMapOf()
         params["key"] = "0dbb338d2f0bf8392d1ff773df23a555"
         params["v"] = "1.0"
         return params
     }
+
 }
