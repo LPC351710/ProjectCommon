@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 LogUtils.d(errorMessage)
             }
 
+
             override fun onStop() {
             }
         }

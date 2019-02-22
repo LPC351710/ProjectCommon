@@ -1,6 +1,5 @@
 package com.ppm.netapp.presenter;
 
-import com.ppm.netapp.model.HisDetails;
 import com.ppm.netapp.model.HisEvent;
 import com.ppm.netapp.network.HttpUtils;
 import com.ppm.netapp.network.callback.JsonCallBack;
