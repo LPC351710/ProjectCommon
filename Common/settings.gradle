@@ -1,1 +1,1 @@
-include ':ppcomon', ':netapp', ':rxjava', ':kotlindemo'
+include ':ppcomon', ':netapp', ':rxjava', ':kotlindemo', ':gradledemo', ':algorithm', ':threaddemo'
