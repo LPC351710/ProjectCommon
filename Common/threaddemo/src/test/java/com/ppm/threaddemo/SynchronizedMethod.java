@@ -1,5 +1,6 @@
 package com.ppm.threaddemo;
 
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SynchronizedMethod {
@@ -21,5 +22,8 @@ public class SynchronizedMethod {
         }
     }
 
+    private void method2() {
+        ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<>(); //锁分段
 
+    }
 }
