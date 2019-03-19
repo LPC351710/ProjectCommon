@@ -1,0 +1,7 @@
+ANR(Application Not Responding)
+1.ServiceTimeout: 前台服务20s内未执行完成
+2.BroadcastQueueTimeout: 前台广播在10s内未执行完成
+3.ContentProviderTimeout: provider在publish时超过10s
+4.InputDispatchingTimeout:输入事件分发超时5s,包括按键和触摸事件。
+
+

@@ -1,0 +1,54 @@
+Android Framework:
+
+一 系统核心服务(System Server)
+1. ActivityManager ->  activity service broadcast provider
+2. WindowManager
+3. PackageManager
+4. PowerManager
+5. InputManager
+6. SensorManager
+7. AlarmManager
+...
+
+二 系统启动过程
+1. init
+2. zygote
+3. systemServer
+4. serviceManager
+
+三 内核技术
+1. CPU调度
+2. 进程管理
+3. 文件系统
+4. 内存管理
+
+四 通信方式
+1. Binder
+2. Handler
+3. Socket
+4. Pipe(linux 管道)
+5. signal
+
+五 Runtime
+1. ART运作流程
+2. dex
+3. JNI
+4. GC机制
+5. 热修复与插件化
+
+六 异常原理
+1. Watchdog
+2. ANR
+3. Java Crash
+4. Native Crash
+5. 卡顿
+
+七 调试
+1. 编译命令
+2. systrace
+3. trace
+4. ps
+5. bugreport
+6. debuggerd
+7. gdb
+8. addrline

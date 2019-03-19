@@ -1,0 +1,106 @@
+Dart语言详解
+一 变量
+1. 变量声明： var dynamic Object var-类型为声明时值的类型，并且类型不可更改 dynamic可以修改类型
+2. 默认值：没有初始化的变量默认获取一个默认值为null,一切皆对象，对象的默认值为null;
+3. final和const 共同点: 声明的类型可省略，初始化后不能在赋值，不能和var同时使用;
+                不同点: a.类级别常量使用static const;
+                       b.const可使用其他const常量的值来初始化其值；
+                       c.使用const赋值声明，const可省略；
+                       d.可以更改非final,非const变量的值，即使曾经具有const值;
+                       e.const导致的不可变性是可传递的；
+                       f.相同的const常量不会在内存中重复创建；
+                       g.const需要是编译时常量；
+4.内置类型：1.Numbers 数值  Strings 字符串  Booleans 布尔值 Lists 列表(数组) Sets 集合 Maps 集合
+           Runes 符号字符  Symbols 标识符
+           2.int 整数值 double 64-bit双精度浮点数 int和double是num的子类
+           3.String: Dart 字符串是 UTF-16 编码的字符序列, 可以使用单引号或者双引号来创建字符串,
+           可以使用三个单引号或者双引号创建多行字符串对象, 可以使用 r 前缀创建”原始raw”字符串。
+           可以在字符串中使用表达式： ${expression},如果表达式是一个标识符，可以省略 {}，
+           如果表达式的结果为一个对象，则 Dart 会调用对象的 toString() 函数来获取一个字符串。
+           4.bool对象未初始化的默认值是null
+           5.List a.Dart中可以直接打印list包括list的元素，List也是对象。java中直接打印list结果是地址值
+                  b.Dart中List的下标索引和java一样从0开始和java一样支持泛型。
+                  c.有增删改查，支持倒序，自带排序、洗牌，可使用+将两个List合并。
+           6.Set set1.difference(set2):返回set1集合里有但set2里没有的元素集合
+                 set1.difference(set2):返回set1集合里有但set2里没有的元素集合
+                 set1.union(set2)：返回set1和set2的并集
+                 set1.retainAll()：set1只保留某些元素(要保留的元素要在原set中存在）
+           7.Runes
+             Runes runes = new Runes('\u{1f605} \u6211‘);
+             var str1 = String.fromCharCodes(runes);
+             print(str1);
+           8.Symbol 标识符，主要是反射用，现在mirrors模块已经被移除
+5.函数
+    1. 定义:可在函数内定义，定义函数时可省略类型，支持缩写语法 =>
+    2. 可选参数: 可选命名参数，可选位置参数，默认参数值
+    3. 匿名函数:可赋值给变量，通过变量调用,可在其他函数中直接调用或传递给其他函数
+    4. 闭包:Function makeAddFunc(int x) {
+               x++;
+               return (int y) => x + y;
+          }
+
+          main() {
+            var addFunc2 = makeAddFunc(2);
+            var addFunc4 = makeAddFunc(4);
+            print(addFunc2(3));
+            print(addFunc4(3));
+          }
+    5.函数别名: typedef Fun1(int a, int b);
+            typedef Fun2<T, K>(T a, K b);
+            int add(int a, int b) {
+              print('a + b');
+              return a + b;
+            }
+            class Demo1 {
+              Demo1(int f(int a, int b), int x, int y) {
+                var sum = f(x, y);
+                print("sum1 = $sum");
+              }
+            }
+            class Demo2 {
+              Demo2(Fun1 f, int x, int y) {
+                var sum = f(x, y);
+                print("sum2 = $sum");
+              }
+            }
+            class Demo3 {
+              Demo3(Fun2<int, int> f, int x, int y) {
+                var sum = f(x, y);
+                print("sum3 = $sum");
+              }
+            }
+    6.操作符: ?. ~/ as is is! ?? ??= ..级联
+
+6. 流程控制语句  if else  for, forEach, for-in while , do-while break , continue，switch case
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
