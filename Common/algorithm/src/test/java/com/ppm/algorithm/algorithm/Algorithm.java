@@ -1,4 +1,4 @@
-package com.ppm.algorithm;
+package com.ppm.algorithm.algorithm;
 
 import org.junit.Test;
 
@@ -6,8 +6,14 @@ public class Algorithm {
 
     @Test
     public void main() {
-        int nums[] = {1, 2, 2, 2, 3, 3, 4, 4, 5};
-        removeDuplicates(nums);
+//        int nums[] = {1, 2, 2, 2, 3, 3, 4, 4, 5};
+//        removeDuplicates(nums);
+
+//        System.out.print(gcd(100, 120));
+
+        String s = "2019-03-12 19:37:08";
+        System.out.println(s.substring(0, 10));
+        System.out.println(s.substring(11, s.length()));
     }
 
     /**
@@ -53,5 +59,16 @@ public class Algorithm {
         }
 
         return max;
+    }
+
+    /**
+     * 欧几里得算法
+     * 计算两个非负整数p和q的最大公约数：若 q是0，则最大公约数为p。
+     * 否则，将p除以q得到余数r,p和q的最大公约数即为q和r的最大公约数
+     */
+    private int gcd(int p, int q) {
+        if (q == 0) return p;
+        int r = p % q;
+        return gcd(q, r);
     }
 }
