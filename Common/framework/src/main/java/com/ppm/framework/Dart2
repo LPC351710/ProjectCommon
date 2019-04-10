@@ -1,0 +1,179 @@
+一 异常
+   1. DeferredLoadException 延迟加载异常
+   2. FormatException 格式异常
+   3. IntegerDivisionByZeroException 整数除0异常
+   4. IOException IO异常
+   5. IsolateSpawnException 隔离产生异常
+   6. TimeoutException 超时异常
+
+
+// 抛出Exception 对象
+// throw new FormatException(‘格式异常');
+
+// 抛出Error 对象
+// throw new OutOfMemoryError();
+
+// 抛出任意非null对象
+// throw '这是一个异常';
+
+
+
+
+try {
+  throw new OutOfMemoryError();
+} on OutOfMemoryError {
+  print('没有内存了');
+} on Error catch(e) {
+  print('Unknown error: $e');
+} catch (e, s) {
+  print('Exception details: $e');
+  print('Stack Trace: $s');
+} finally {
+  print('end');
+}
+
+构造函数
+//dart建议写法
+class Point {
+  num x;
+  num y;
+  Point(this.x, this.y);
+}
+
+命名构造函数
+class Point {
+  num x;
+  num y;
+
+  Point(this.x, this.y);
+
+  //命名构造函数
+  Point.fromJson(Map json) {
+    x = json['x'];
+    y = json['y'];
+  }
+}
+
+重定向构造函数
+class Point {
+  num x;
+  num y;
+
+  Point(this.x, this.y);
+
+  //重定向构造函数，使用冒号调用其他构造函数
+  Point.alongXAxis(num x) : this(x, 0);
+}
+
+初始化列表
+
+import 'dart:math';
+
+class Point {
+  //final变量不能被修改，必须被构造函数初始化
+  final num x;
+  final num y;
+  final num distanceFromOrigin;
+
+  //初始化列表
+  Point(x, y)
+      : x = x,
+        y = y,
+        distanceFromOrigin = sqrt(x * x + y * y);
+}
+
+常量构造函数
+class Point {
+  //定义const构造函数要确保所有实例变量都是final
+  final num x;
+  final num y;
+  static final Point2 origin = const Point2(0, 0);
+
+  //const关键字放在构造函数名称之前，且不能有函数体
+  const Point(this.x, this.y);
+}
+
+工厂构造函数
+
+class Singleton {
+  String name;
+  //工厂构造函数无法访问this，所以这里要用static
+  static Singleton _cache;
+
+  //工厂方法构造函数，关键字factory
+  factory Singleton([String name = 'singleton']) =>
+      Singleton._cache ??= Singleton._newObject(name);
+
+  //定义一个命名构造函数用来生产实例
+  Singleton._newObject(this.name);
+}
+
+getter 和 setter
+
+class Rectangle {
+  num left;
+  num top;
+  num width;
+  num height;
+
+  Rectangle(this.left, this.top, this.width, this.height);
+
+  num get right => left + width;
+  set right(num value) => left = value - width;
+  num get bottom => top + height;
+  set bottom(num value) => top = value - height;
+}
+
+//可调用类
+class ClassFunction {
+  call(String a, String b, String c) => '$a $b $c!';
+}
+
+main() {
+  var cf = new ClassFunction();
+  var out = cf("dongnao","flutter","damon");
+  print('$out');
+  print(cf.runtimeType);
+  print(out.runtimeType);
+  print(cf is Function);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
