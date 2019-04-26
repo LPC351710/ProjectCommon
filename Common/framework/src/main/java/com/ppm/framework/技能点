@@ -1,0 +1,6 @@
+1.Java（泛型，反射，注解，集合，线程，I/O流）
+2.Android(开源框架源码，Framework源码 AMS,WMS,PMS,IMS,Binder,Handler, 插件化，组件化，热修复，性能优化)
+3.JNI(cmake, 音视频)
+4.gradle(groovy语言, gradle插件)
+5.设计模式和架构(创建型，行为型，结构型，MVP MVVM)
+6.数据结构与算法(表：线性表，链表，队列，栈，二叉树，红黑树， 排序算法，递归)
