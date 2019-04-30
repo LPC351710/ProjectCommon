@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.ppm.netapp.R;
 
@@ -45,7 +46,12 @@ public class Main3Activity extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
 
 //        webView.setWebChromeClient(new WebChromeClient());
-//        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return super.shouldOverrideUrlLoading(view, url);
+            }
+        });
         webView.loadUrl("https://hnym.wxrrd.com/guider/apply?&token=8c52374a625e449fb97b48fafa8370a5");
     }
 
