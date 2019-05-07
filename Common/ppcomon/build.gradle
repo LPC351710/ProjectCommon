@@ -9,6 +9,12 @@ android {
         targetSdkVersion versions.targetSdkVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
     }
 
     buildTypes {
@@ -49,4 +55,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }
