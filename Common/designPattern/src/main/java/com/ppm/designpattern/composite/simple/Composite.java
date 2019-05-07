@@ -14,6 +14,7 @@ public class Composite extends Component {
     @Override
     public void doSomething() {
         System.out.println(name);
+
         if (null != components) {
             for (Component component : components) {
                 component.doSomething();
