@@ -1,10 +1,11 @@
-package com.ppm.kotlindemo
+package com.ppm.kotlindemo.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ppm.kotlindemo.R
 
 class HisAdapter : RecyclerView.Adapter<HisAdapter.HisViewHolder>() {
 

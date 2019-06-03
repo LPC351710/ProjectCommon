@@ -1,10 +1,11 @@
-package com.ppm.kotlindemo
+package com.ppm.kotlindemo.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.fastjson.JSONObject
+import com.ppm.kotlindemo.R
 import com.ppm.ppcomon.net.HttpClient
 import com.ppm.ppcomon.net.callback.Callback
 import com.ppm.ppcomon.utils.LogUtils
