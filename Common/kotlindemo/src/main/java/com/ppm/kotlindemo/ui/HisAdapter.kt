@@ -23,15 +23,18 @@ class HisAdapter : RecyclerView.Adapter<HisAdapter.HisViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return mData.size;
+        return mData.size
     }
 
     override fun onBindViewHolder(holder: HisViewHolder, position: Int) {
         holder.textView.text = mData[position]
+        holder.imageView.drawable
     }
 
     class HisViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textView: TextView = itemView.findViewById(R.id.test)
         var imageView: ImageView = itemView.findViewById(R.id.image)
+
+
     }
 }
