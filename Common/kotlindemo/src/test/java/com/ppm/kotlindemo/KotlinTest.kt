@@ -131,4 +131,111 @@ class KotlinTest {
         """
         )
     }
+
+    @Test
+    fun loop() {
+        loop@ for (i in 1..100) {
+            loop1@ for (j in 1..100) {
+                if (i == 50) break@loop1
+            }
+        }
+    }
+
+    fun foo() {
+        listOf(1, 2, 3, 4, 5)
+            .forEach {
+                if (it == 3) return
+                print(it)
+            }
+
+        listOf(1, 2, 3, 4, 5).forEach list@{
+            if (it == 3) return@list
+        }
+
+        listOf(1, 2, 3, 4, 5).forEach {
+            if (it == 3) return@forEach
+            print(it)
+        }
+
+        print("done with implicit label")
+
+        listOf(1, 2, 3, 4, 5).forEach(fun(value: Int) {
+            if (value == 3) return
+            print(value)
+        })
+        print("down with anonymous function")
+    }
+
+    class InitOrderDemo(name: String) {
+
+        val firstProperty = "First property: $name".also(::println)
+
+        init {
+            println("First initializer block that prints ${name}")
+        }
+
+        val sencodeProperty = "Second property: ${name.length}".also(::println)
+
+        init {
+            println("Seconde initializer block that prints ${name.length}")
+        }
+    }
+
+    class Person(val name: String) {
+        constructor(name: String, parent: Person) : this(name) {
+        }
+    }
+
+    class Constructors {  //初始化代码块会在次构造函数之前执行
+        init {
+            println("Init block")
+        }
+
+        constructor(i: Int) {
+            println("Constructors")
+        }
+    }
+
+    class DontCreateMe private constructor() {}
+
+    class Customer(val customer: String = "")
+
+
+    open class Base {
+        open fun v() {}
+        fun nv() {}
+    }
+
+    class Derived : Base() {
+        override fun v() {
+        }
+    }
+
+    open class AnotherDerived : Base() {
+        final override fun v() {
+        }
+    }
+
+    open class Foo {
+        open val x: Int
+            get() {
+                return x
+            }
+    }
+
+    class Bar1 : Foo() {
+        override val x: Int = 133
+    }
+
+    interface Foo1 {
+        val count: Int
+    }
+
+    class Bar3(override val count: Int) : Foo1
+
+    class Bar2 : Foo1 {
+        override var count: Int = 0
+    }
+
+
 }

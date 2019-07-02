@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".view.Main2Activity"></activity>
+        <activity android:name=".view.Main4Activity"></activity>
+        <activity android:name=".view.Main2Activity" />
         <activity android:name=".view.MainActivity" />
         <activity android:name=".view.Main3Activity">
             <intent-filter>
