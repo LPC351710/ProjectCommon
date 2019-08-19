@@ -112,8 +112,6 @@ open class Base(val name: String) {
 
         }
 
-        val allDataProvider: Collection<LinkagePicker.DataProvider>? = null
-
         val instance = MyClass.create()
     }
 
